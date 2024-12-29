@@ -11,6 +11,8 @@ func (app *application) routes() http.Handler {
 
 	router.HandlerFunc(http.MethodGet, "/v1/healthcheck", app.healthcheckHandler)
 	router.HandlerFunc(http.MethodGet, "/v1/auth/", app.getAuthCode)
+	router.HandlerFunc(http.MethodGet, "/v1/reflect/", app.getRequestInfo)
+
 	// Return the httprouter instance.
 	return router
 }
